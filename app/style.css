@@ -1,0 +1,711 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  font-family: var(--font);
+  font-weight: 200;
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+:root {
+  --font: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Yu Gothic UI',Meiryo,sans-serif;
+}
+
+.beige {
+  --header-color: #FFFFFF;
+  --background-color: #FCFAF7;
+  --main-color-1: #E2C2A4;
+  --main-color-2: #F1E4D5;
+  --main-color-3: #c9bbb1;
+  --text-color: #5C5248;
+  --progress-min: #C97B7D;
+  --progress-max: #7FA286;
+}
+
+.beige.dark, .dark .beige {
+  --header-color: #26211C;
+  --background-color: #1A1714;
+  --main-color-1: #8C755E;
+  --main-color-2: #3D352E;
+  --main-color-3: #574B41;
+  --text-color: #E6E1DC;
+  --progress-min: #B4645A;
+  --progress-max: #64966E;
+}
+
+.blue {
+  --header-color: #FFFFFF;
+  --background-color: #F4F7F9;
+  --main-color-1: #A4C2E2;
+  --main-color-2: #D5E4F1;
+  --main-color-3: #b1bfc9;
+  --text-color: #48525C;
+  --progress-min: #8A99C1;
+  --progress-max: #6CB6A3;
+}
+
+.blue.dark, .dark .blue {
+  --header-color: #1C2226;
+  --background-color: #14181A;
+  --main-color-1: #5E7A8C;
+  --main-color-2: #2E373D;
+  --main-color-3: #414E57;
+  --text-color: #DCE2E6;
+  --progress-min: #7882AA;
+  --progress-max: #64A096;
+}
+
+.green {
+  --header-color: #FFFFFF;
+  --background-color: #F4F9F5;
+  --main-color-1: #A4E2B9;
+  --main-color-2: #D5F1DE;
+  --main-color-3: #b1c9ba;
+  --text-color: #485C4E;
+  --progress-min: #8A99C1;
+  --progress-max: #6CA3B6;
+}
+
+.green.dark, .dark .green {
+  --header-color: #1C2620;
+  --background-color: #141A16;
+  --main-color-1: #5E8C6F;
+  --main-color-2: #2E3D35;
+  --main-color-3: #41574A;
+  --text-color: #DCE6E1;
+  --progress-min: #78A082;
+  --progress-max: #6496A0;
+}
+
+.monochrome {
+  --header-color: #FFFFFF;
+  --background-color: #F6F6F6;
+  --main-color-1: #CCCCCC;
+  --main-color-2: #E5E5E5;
+  --main-color-3: #B3B3B3;
+  --text-color: #333333;
+  --progress-min: #B4B4B4;
+  --progress-max: #646464;
+}
+
+.monochrome.dark, .dark .monochrome {
+  --header-color: #222222;
+  --background-color: #121212;
+  --main-color-1: #666666;
+  --main-color-2: #333333;
+  --main-color-3: #444444;
+  --text-color: #E0E0E0;
+  --progress-min: #646464;
+  --progress-max: #8C8C8C;
+}
+
+.lavender {
+  --header-color: #FFFFFF;
+  --background-color: #F7F5FA;
+  --main-color-1: #C2A4E2;
+  --main-color-2: #E4D5F1;
+  --main-color-3: #BCB1C9;
+  --text-color: #52485C;
+  --progress-min: #C28A99;
+  --progress-max: #8AA3AA;
+}
+
+.lavender.dark, .dark .lavender {
+  --header-color: #211C26;
+  --background-color: #17141A;
+  --main-color-1: #755E8C;
+  --main-color-2: #352E3D;
+  --main-color-3: #4B4157;
+  --text-color: #E1DCE6;
+  --progress-min: #9678A0;
+  --progress-max: #6E8C96;
+}
+
+.sakura {
+  --header-color: #FFFFFF;
+  --background-color: #FCF9F9;
+  --main-color-1: #E2A4B7;
+  --main-color-2: #F1D5DE;
+  --main-color-3: #C9B1B7;
+  --text-color: #5C484E;
+  --progress-min: #E2A4B7;
+  --progress-max: #BACCAB;
+}
+
+.sakura.dark, .dark .sakura {
+  --header-color: #261C1F;
+  --background-color: #1A1416;
+  --main-color-1: #8C5E6C;
+  --main-color-2: #3D2E33;
+  --main-color-3: #574147;
+  --text-color: #E6DCD2;
+  --progress-min: #A06E7D;
+  --progress-max: #788C87;
+}
+
+.mint {
+  --header-color: #FFFFFF;
+  --background-color: #F5FAF8;
+  --main-color-1: #A4E2CE;
+  --main-color-2: #D5F1E9;
+  --main-color-3: #B1C9C1;
+  --text-color: #485C55;
+  --progress-min: #8A99B1;
+  --progress-max: #6C99A7;
+}
+
+.mint.dark, .dark .mint {
+  --header-color: #1C2623;
+  --background-color: #141A18;
+  --main-color-1: #5E8C7D;
+  --main-color-2: #2E3D38;
+  --main-color-3: #415750;
+  --text-color: #DCE6E3;
+  --progress-min: #78A091;
+  --progress-max: #648CA5;
+}
+
+.ocean {
+  --header-color: #FFFFFF;
+  --background-color: #F4F9FA;
+  --main-color-1: #A4DEE2;
+  --main-color-2: #D5F1F1;
+  --main-color-3: #B1C6C9;
+  --text-color: #485A5C;
+  --progress-min: #8A99B1;
+  --progress-max: #6C96AD;
+}
+
+.ocean.dark, .dark .ocean {
+  --header-color: #1C2526;
+  --background-color: #141A1B;
+  --main-color-1: #5E898C;
+  --main-color-2: #2E3B3D;
+  --main-color-3: #415457;
+  --text-color: #DCE5E6;
+  --progress-min: #789BA0;
+  --progress-max: #6482AF;
+}
+
+.navy {
+  --header-color: #FFFFFF;
+  --background-color: #F5F6F9;
+  --main-color-1: #A4B2E2;
+  --main-color-2: #D5DDF1;
+  --main-color-3: #B1B9C9;
+  --text-color: #1D2433;
+  --progress-min: #8A93C1;
+  --progress-max: #627F99;
+}
+
+.navy.dark, .dark .navy {
+  --header-color: #1B1E26;
+  --background-color: #13151A;
+  --main-color-1: #5E6E8C;
+  --main-color-2: #2E333D;
+  --main-color-3: #414757;
+  --text-color: #E2E5EB;
+  --progress-min: #6E78A0;
+  --progress-max: #5A8296;
+}
+
+.breeze {
+  --header-color: #FFFFFF;
+  --background-color: #F4F9F9;
+  --main-color-1: #A4E2DF;
+  --main-color-2: #D5F1F0;
+  --main-color-3: #B1C9C8;
+  --text-color: #485C5B;
+  --progress-min: #8AE2DF;
+  --progress-max: #4A9A97;
+}
+
+.breeze.dark, .dark .breeze {
+  --header-color: #1C2625;
+  --background-color: #141A1A;
+  --main-color-1: #5E8C8A;
+  --main-color-2: #2E3D3C;
+  --main-color-3: #415756;
+  --text-color: #DCE6E5;
+  --progress-min: #415756;
+  --progress-max: #8C5E60;
+}
+
+.wine {
+  --header-color: #FFFFFF;
+  --background-color: #FAF5F6;
+  --main-color-1: #E2A4B1;
+  --main-color-2: #F1D5DB;
+  --main-color-3: #C9B1B5;
+  --text-color: #5C484B;
+  --progress-min: #D98293;
+  --progress-max: #731224;
+}
+
+.wine.dark, .dark .wine {
+  --header-color: #261C1D;
+  --background-color: #1A1415;
+  --main-color-1: #8C5E64;
+  --main-color-2: #3D2E30;
+  --main-color-3: #574143;
+  --text-color: #E6DCDD;
+  --progress-min: #574143;
+  --progress-max: #A63247;
+}
+
+.rose {
+  --header-color: #FFFFFF;
+  --background-color: #FCF9FA;
+  --main-color-1: #E2A4C2;
+  --main-color-2: #F1D5E4;
+  --main-color-3: #C9B1BC;
+  --text-color: #5C4852;
+  --progress-min: #E2A4C2;
+  --progress-max: #A64275;
+}
+
+.rose.dark, .dark .rose {
+  --header-color: #261C22;
+  --background-color: #1A1419;
+  --main-color-1: #8C5E75;
+  --main-color-2: #3D2E35;
+  --main-color-3: #57414D;
+  --text-color: #E6DCE2;
+  --progress-min: #8C5E75;
+  --progress-max: #D9689E;
+}
+
+.forest {
+  --header-color: #FFFFFF;
+  --background-color: #F5F9F6;
+  --main-color-1: #B2E2A4;
+  --main-color-2: #DDF1D5;
+  --main-color-3: #B9C9B1;
+  --text-color: #2B5C1D;
+  --progress-min: #96D284;
+  --progress-max: #225916;
+}
+
+.forest.dark, .dark .forest {
+  --header-color: #1D261C;
+  --background-color: #151A14;
+  --main-color-1: #688C5E;
+  --main-color-2: #333D2E;
+  --main-color-3: #495741;
+  --text-color: #E2EBE0;
+  --progress-min: #333D2E;
+  --progress-max: #76A668;
+}
+
+.amethyst {
+  --header-color: #FFFFFF;
+  --background-color: #F9F5FA;
+  --main-color-1: #B19CD9;
+  --main-color-2: #E6D8F2;
+  --main-color-3: #BCA9D3;
+  --text-color: #4A3E5C;
+  --progress-min: #D9A4C2;
+  --progress-max: #7A60A6;
+}
+
+.amethyst.dark, .dark .amethyst {
+  --header-color: #1F1A26;
+  --background-color: #16121A;
+  --main-color-1: #6A568C;
+  --main-color-2: #342D3D;
+  --main-color-3: #4A4157;
+  --text-color: #E2DCE6;
+  --progress-min: #8C5E75;
+  --progress-max: #9370DB;
+}
+
+.topaz {
+  --header-color: #FFFFFF;
+  --background-color: #FAF9F2;
+  --main-color-1: #E6C973;
+  --main-color-2: #F5E9C9;
+  --main-color-3: #D9C5A3;
+  --text-color: #5C5236;
+  --progress-min: #E2A4A4;
+  --progress-max: #B8860B;
+}
+
+.topaz.dark, .dark .topaz {
+  --header-color: #26231A;
+  --background-color: #1A1812;
+  --main-color-1: #8C7A46;
+  --main-color-2: #3D3829;
+  --main-color-3: #57503A;
+  --text-color: #E6E2D2;
+  --progress-min: #A06E6E;
+  --progress-max: #DAA520;
+}
+
+.ruby {
+  --header-color: #FFFFFF;
+  --background-color: #FAF5F5;
+  --main-color-1: #E27B8D;
+  --main-color-2: #F2D8DC;
+  --main-color-3: #D3A9AF;
+  --text-color: #5C3E42;
+  --progress-min: #C2A4E2;
+  --progress-max: #A6112E;
+}
+
+.ruby.dark, .dark .ruby {
+  --header-color: #261A1B;
+  --background-color: #1A1213;
+  --main-color-1: #8C4650;
+  --main-color-2: #3D292C;
+  --main-color-3: #573A3E;
+  --text-color: #E6D2D4;
+  --progress-min: #755E8C;
+  --progress-max: #E0115F;
+}
+
+header {
+  padding: 15px;
+  background-color: var(--header-color);
+  align-items: center;
+  scrollbar-width: none;
+  overflow-x: auto;
+  white-space: nowrap;
+  height: 39px;
+  vertical-align: middle;
+  display: flex;
+}
+
+.buttons-wrapper {
+  display: inline;
+}
+
+.logo {
+  width: 39px;
+  height: 39px;
+  margin: 0 20px;
+  display: inline-block;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.logo:hover {
+  transform: rotate(10deg);
+}
+
+button.header-button {
+  font-family: var(--font);
+  background-color: var(--main-color-1);
+  color: var(--background-color);
+  font-size: 20px;
+  padding: 5px 1rem;
+  border-radius: 1000px;
+  border: none;
+  font-weight: 300;
+  height: 39px;
+  margin: 0 5px;
+  display: inline-block;
+  border: 1.5px solid transparent;
+  transition:
+    background-color ease 0.3s,
+    color ease 0.3s,
+    border ease 0.3s;
+}
+
+.header-button svg {
+  opacity: 0;
+  width: 0;
+  height: 16px;
+  transform: rotate(-90deg);
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease,
+    width 0.3s ease;
+  color: #fff;
+}
+
+.header-button:hover svg {
+  opacity: 1;
+  width: 16px;
+  transform: rotate(0deg);
+}
+
+.header-button:hover {
+  border: 1.5px solid var(--main-color-1);
+  color: var(--main-color-1);
+  background-color: var(--background-color);
+}
+
+.flashcard-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: 20px;
+}
+
+.flashcard-item {
+  background-color: var(--main-color-2);
+  border-radius: 20px;
+  padding: 5px;
+  animation: fall ease 0.5s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  transition: box-shadow ease 0.3s;
+}
+
+.flashcard-title {
+  font-size: 24px;
+  margin: 10px;
+}
+
+.flashcard-progress {
+  font-size: 20px;
+  margin: 10px;
+}
+
+.flashcard-cards-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.flashcard-bar-wrapper {
+  height: 5px;
+  border-radius: 5px;
+  background-color: var(--background-color);
+  margin: 10px;
+  overflow: hidden;
+}
+
+.flashcard-bar-inner {
+  height: 100%;
+  background-color: color-mix(
+    in srgb,
+    var(--progress-max) calc(var(--t) * 100%),
+    var(--progress-min)
+  );
+  animation: expand ease 1s;
+  transform-origin: left center;
+}
+
+@keyframes expand {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.none {
+  display: none;
+}
+
+.flashcard-item:hover {
+  box-shadow: 0 0 20px var(--main-color-2);
+}
+
+.drawer {
+  width: 0;
+  height: 100vh;
+  background-color: var(--header-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: 
+    width 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+    padding 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  transform-origin: left;
+  padding: 20px 0;
+  pointer-events: none;
+  overflow-x: hidden;
+}
+
+.drawer-title {
+  font-size: 32px;
+}
+
+.drawer.open {
+  width: min(360px, calc(100% - 40px));
+  padding: 20px;
+  pointer-events: auto;
+}
+
+.drawer-contents {
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.drawer.open .drawer-contents {
+  opacity: 1;
+}
+
+.shadow {
+  width: 100%;
+  height: 100vh;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transition:
+    background-color 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+    backdrop-filter 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+    -webkit-backdrop-filter 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+}
+
+.shadow.open {
+  background-color: color-mix(in srgb, var(--main-color-3) 50%, transparent);
+  pointer-events: auto;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.theme-container {
+  padding: 10px 0 20px 0;
+}
+
+.theme-card {
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    var(--main-color-1) 33.3%,
+    var(--main-color-2) 33.3% 66.6%,
+    var(--main-color-3) 66.6%
+  );
+  font-size: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 10px 0;
+  color: var(--text-color);
+}
+
+.theme-card div {
+  padding: 20px 10px;
+}
+
+.theme-light-and-dark {
+  margin: 20px 0;
+  font-size: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 100px;
+  background-color: var(--main-color-2);
+}
+
+.noTransition * {
+  transition: none;
+}
+
+main {
+  padding: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+  margin: 0;
+  padding: 0;
+}
+
+.page-title {
+  font-size: 28px;
+  animation: 0.7s slide cubic-bezier(0.25, 1, 0.5, 1);
+  margin: 0 0 20px 20px;
+}
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.word-card {
+  background-color: var(--main-color-2);
+  padding: 20px;
+  display: flex;
+  border-radius: 20px;
+  font-size: 24px;
+  animation: 0.7s slide cubic-bezier(0.25, 1, 0.5, 1);
+  margin-bottom: 20px;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.word-left {
+  width: calc(50% - 20px);
+  padding-right: 20px;
+}
+
+.word-right {
+  width: calc(50% - 20px);
+  position: relative;
+  padding-left: 20px;
+}
+
+.word-right::before {
+  content: "";
+  display: block;
+  width: 2px;
+  background-color: var(--main-color-1);
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.word-number {
+  writing-mode: vertical-rl;
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 20px;
+  color: var(--main-color-1);
+}
+
+.word-tags {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .word-number {
+    top: 10px;
+  }
+
+  .word-left {
+    width: 100%;
+    padding: 0 0 20px 0;
+  }
+
+  .word-right {
+    width: 100%;
+    padding: 20px 0 0 0;
+  }
+
+  .word-right::before {
+    width: 100%;
+    height: 2px;
+  }
+
+  .word-card {
+    flex-direction: column;
+  }
+}

@@ -5,7 +5,7 @@
     <link href="style.css" rel="stylesheet">
     <link href="../favicon.ico" rel="icon">
     <script src="main.js" defer></script>
-    <script src="home.js" defer></script>
+    <script src="play.js" defer></script>
     <script>
       (() => {
         const page = document.documentElement;
@@ -18,7 +18,7 @@
       })();
     </script>
     <!-- Metadata -->
-    <title>Remé | Home</title>
+    <title>Remé | Play</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
@@ -69,25 +69,17 @@
       </div>
     </header>
     <main>
-      <div class="page-title">Flashcards</div>
-      <div class="flashcard-list">
-        <template id="flashcard-item">
-          <a class="move-to-play">
-            <div class="flashcard-item" style="">
-              <div class="flashcard-title"></div>
-              <div>
-                <span class="flashcard-progress"></span>
-                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="var(--main-color-1)" stroke-width="2" class="flashcard-cards-icon"
-                stroke-linecap="round" stroke-linejoin="round" fill="none">
-                  <path d="M3 3h13v13H3z"/><path d="M16 8h5v13H8v-5"/>
-                </svg>
-                <span class="flashcard-number-of-cards"></span>
-              </div>
-              <div class="flashcard-bar-wrapper">
-                <div class="flashcard-bar-inner"></div>
-              </div>
+      <div class="page-title"></div>
+      <div class="words-list">
+        <template id="word-card">
+          <div class="word-card">
+            <div class="word-left"></div>
+            <div class="word-right">
+              <span class="word-meaning"></span>
+              <small class="word-tags"></small>
+              <div class="word-number"></div>
             </div>
-          </a>
+          </div>
         </template>
       </div>
     </main>
