@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja" class="">
+  <head>
+    <!-- CSS / JS / Web Fonts -->
+    <link href="style.css" rel="stylesheet">
+    <link href="../favicon.ico" rel="icon">
+    <script src="main.js" defer></script>
+    <script src="home.js" defer></script>
+    <script>
+      (() => {
+        const page = document.documentElement;
+        const savedTheme = localStorage.getItem('remeTheme') || "theme";
+        const savedMode = localStorage.getItem('remeMode');
+        page.classList.add('noTransition');
+        page.classList.add(savedTheme);
+        if (savedMode === 'true') page.classList.add('dark');
+        page.classList.remove('noTransition');
+      })();
+    </script>
+    <!-- Metadata -->
+    <title>Remé | Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <header>
+      <a href="home.html">
+        <!-- Copyright (c) 2026 Jüw. All rights reserved. -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 124 124" fill="none" class="logo">
+          <rect width="124" height="124" rx="24" fill="var(--main-color-2)"/>
+          <rect width="80" height="60" rx="10" x="30" y="35" fill="var(--main-color-3)"/>
+          <rect width="80" height="60" rx="10" x="25" y="30" fill="var(--main-color-1)"/>
+          <rect width="80" height="60" rx="10" x="20" y="25" fill="var(--header-color)"/>
+          <rect width="60" height="10" rx="5" x="30" y="40" fill="var(--main-color-2)"/>
+          <rect width="60" height="10" rx="5" x="30" y="55" fill="var(--main-color-2)"/>
+        </svg>
+      </a>
+      <div class="buttons-wrapper">
+        <input type="file" id="realInput" class="none"/>
+        <button id="create-new-flashcards" class="header-button">
+          <svg fill="#fff" width="800" height="800" viewBox="0 0 24 24">
+            <path d="M5 12h14m-7-7v14" style="fill:none;stroke:var(--main-color-1);stroke-linecap:round;stroke-linejoin:round;stroke-width:2"/>
+          </svg>
+          <span>New</span>
+        </button>
+        <button id="search-flashcards" class="header-button">
+          <svg width="800" height="800" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21.71 20.29 18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.39M11 18a7 7 0 1 1 7-7 7 7 0 0 1-7 7" fill="var(--main-color-1)"/>
+          </svg>
+          <span>Search</span>
+        </button>
+        <button id="export-flashcards" class="header-button">
+          <svg width="800" height="800" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 14v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6M12 3v14m0 0-5-5.444M12 17l5-5.444" stroke="var(--main-color-1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Export</span>
+        </button>
+        <button id="import-flashcards" class="header-button">
+          <svg width="800" height="800" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.71 7.71 11 5.41V15a1 1 0 0 0 2 0V5.41l2.29 2.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42l-4-4a1 1 0 0 0-.33-.21 1 1 0 0 0-.76 0 1 1 0 0 0-.33.21l-4 4a1 1 0 1 0 1.42 1.42M21 12a1 1 0 0 0-1 1v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6a1 1 0 0 0-2 0v6a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-6a1 1 0 0 0-1-1" fill="var(--main-color-1)"/>
+          </svg>
+          <span>Import</span>
+        </button>
+        <button id="change-theme" class="header-button">
+          <svg width="800" height="800" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+            <path d="M203.574 51.035A107.948 107.948 0 1 0 92.028 229.861 36.002 36.002 0 0 0 140 195.902V192a12.013 12.013 0 0 1 12-12h46.21a35.8 35.8 0 0 0 35.105-27.985 108.5 108.5 0 0 0 2.681-24.94 107.18 107.18 0 0 0-32.422-76.04m6.339 95.66A11.92 11.92 0 0 1 198.208 156H152a36.04 36.04 0 0 0-36 36v3.902a12.002 12.002 0 0 1-15.98 11.328 84.015 84.015 0 0 1 27.114-163.226q.429-.004.858-.004a84.33 84.33 0 0 1 84.005 83.276 84.5 84.5 0 0 1-2.084 19.418M144 76a16 16 0 1 1-16-16 16 16 0 0 1 16 16m-47.18 33.999a15.997 15.997 0 1 1-5.855-21.853 15.997 15.997 0 0 1 5.856 21.853m0 36.002a15.997 15.997 0 1 1-21.852-5.855 15.997 15.997 0 0 1 21.853 5.855m90.067-52a15.997 15.997 0 1 1-21.852-5.855 15.997 15.997 0 0 1 21.852 5.855" fill="var(--main-color-1)"/>
+          </svg>
+          <span>Theme</span>
+        </button>
+      </div>
+    </header>
+    <main>
+      <div class="page-title">Flashcards</div>
+      <div class="flashcard-list">
+        <template id="flashcard-item">
+          <a class="move-to-play">
+            <div class="flashcard-item" style="">
+              <div class="flashcard-title"></div>
+              <div>
+                <span class="flashcard-progress"></span>
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="var(--main-color-1)" stroke-width="2" class="flashcard-cards-icon"
+                stroke-linecap="round" stroke-linejoin="round" fill="none">
+                  <path d="M3 3h13v13H3z"/><path d="M16 8h5v13H8v-5"/>
+                </svg>
+                <span class="flashcard-number-of-cards"></span>
+              </div>
+              <div class="flashcard-bar-wrapper">
+                <div class="flashcard-bar-inner"></div>
+              </div>
+            </div>
+          </a>
+        </template>
+      </div>
+    </main>
+    <div class="shadow" id="drawer-shadow"></div>
+    <div class="drawer" id="drawer-theme">
+      <div class="drawer-contents">
+        <div class="drawer-title" id="theme-title"></div>
+        <small>THEME</small>
+        <div class="theme-light-and-dark">Light</div>
+        <div class="theme-container">
+          <div class="theme-card beige" id="beige">
+            <div>beige</div>
+          </div>
+          <div class="theme-card blue" id="blue">
+            <div>blue</div>
+          </div>
+          <div class="theme-card green" id="green">
+            <div>green</div>
+          </div>
+          <div class="theme-card monochrome" id="monochrome">
+            <div>monochrome</div>
+          </div>
+          <div class="theme-card lavender" id="lavender">
+            <div>lavender</div>
+          </div>
+          <div class="theme-card sakura" id="sakura">
+            <div>sakura</div>
+          </div>
+          <div class="theme-card mint" id="mint">
+            <div>mint</div>
+          </div>
+          <div class="theme-card ocean" id="ocean">
+            <div>ocean</div>
+          </div>
+          <div class="theme-card navy" id="navy">
+            <div>navy</div>
+          </div>
+          <div class="theme-card breeze" id="breeze">
+            <div>breeze</div>
+          </div>
+          <div class="theme-card wine" id="wine">
+            <div>wine</div>
+          </div>
+          <div class="theme-card rose" id="rose">
+            <div>rose</div>
+          </div>
+          <div class="theme-card forest" id="forest">
+            <div>forest</div>
+          </div>
+          <div class="theme-card amethyst" id="amethyst">
+            <div>amethyst</div>
+          </div>
+          <div class="theme-card topaz" id="topaz">
+            <div>topaz</div>
+          </div>
+          <div class="theme-card ruby" id="ruby">
+            <div>ruby</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
