@@ -1,29 +1,4 @@
-let flashcards = [
-  {
-    "id": '17801453695290.9537914532665981',
-    "title": "Noms français",
-    "cards": 10,
-    "memorized": 5,
-    "data": [
-      {
-        "word": "Pomme",
-        "meaning": "りんご",
-        "tags": ["fruit", "français"],
-        "lastTested": "2026-05-25T12:41:05.327Z",
-        "memoryIndex": 0.5
-      },
-      {
-        "word": "Voir",
-        "meaning": "見る",
-        "tags": ["verb", "français"],
-        "lastTested": "2026-05-25T12:41:05.327Z",
-        "memoryIndex": 0.5
-      }
-    ]
-  }
-];
-
-localStorage.setItem('remeData', JSON.stringify(flashcards));
+let flashcards = JSON.parse(localStorage.getItem('remeData'));
 
 function setFlashcardsList() {
   let container = document.querySelector('.flashcard-list');

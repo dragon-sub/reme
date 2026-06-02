@@ -517,7 +517,7 @@ button.header-button {
 
 .drawer {
   width: 0;
-  height: 100vh;
+  height: calc(100vh - 40px);
   background-color: var(--header-color);
   position: fixed;
   top: 0;
@@ -544,6 +544,15 @@ button.header-button {
 .drawer-contents {
   transition: opacity 0.3s ease;
   opacity: 0;
+  position: relative;
+}
+
+.drawer-contents a svg {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
 }
 
 .drawer.open .drawer-contents {
@@ -653,6 +662,25 @@ a {
 .word-left {
   width: calc(50% - 20px);
   padding-right: 20px;
+  position: relative;
+}
+
+.word-play {
+  width: 40px;
+  height: 40px;
+  background-color: var(--main-color-1);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.word-play svg {
+  width: 20px;
+  height: 20px;
+  padding: 10px;
 }
 
 .word-right {
