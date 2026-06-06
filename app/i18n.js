@@ -1,0 +1,1 @@
+let i18nElement = document.querySelectorAll('[data-i18n]');

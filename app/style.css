@@ -6,10 +6,17 @@ html, body {
   font-weight: 200;
   color: var(--text-color);
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 :root {
   --font: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Yu Gothic UI',Meiryo,sans-serif;
+}
+
+#\32 {
+  --font: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Microsoft YaHei UI','Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
 }
 
 .beige {
@@ -374,6 +381,7 @@ header {
   height: 39px;
   vertical-align: middle;
   display: flex;
+  border-bottom: 1px solid var(--main-color-2);
 }
 
 .buttons-wrapper {
@@ -405,29 +413,31 @@ button.header-button {
   font-weight: 300;
   height: 39px;
   margin: 0 5px;
-  display: inline-block;
+  display: inline-flex;
   border: 1.5px solid transparent;
   transition:
     background-color ease 0.3s,
     color ease 0.3s,
     border ease 0.3s;
+  align-items: center;
 }
 
 .header-button svg {
   opacity: 0;
   width: 0;
-  height: 16px;
+  height: 20px;
   transform: rotate(-90deg);
   transition:
     transform 0.3s ease,
     opacity 0.3s ease,
     width 0.3s ease;
   color: #fff;
+  padding-right: 5px;
 }
 
 .header-button:hover svg {
   opacity: 1;
-  width: 16px;
+  width: 20px;
   transform: rotate(0deg);
 }
 
@@ -450,7 +460,25 @@ button.header-button {
   animation: fall ease 0.5s;
   animation-fill-mode: forwards;
   opacity: 0;
-  transition: box-shadow ease 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.flashcard-item::before {
+  content: "";
+  pointer-events: none;
+  background-color: rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.flashcard-item:hover::before {
+  opacity: 1;
 }
 
 .flashcard-title {
@@ -511,10 +539,6 @@ button.header-button {
   display: none;
 }
 
-.flashcard-item:hover {
-  box-shadow: 0 0 20px var(--main-color-2);
-}
-
 .drawer {
   width: 0;
   height: calc(100vh - 40px);
@@ -529,6 +553,7 @@ button.header-button {
   padding: 20px 0;
   pointer-events: none;
   overflow-x: hidden;
+  scrollbar-width: thin;
 }
 
 .drawer-title {
@@ -583,7 +608,7 @@ button.header-button {
 }
 
 .theme-container {
-  padding: 10px 0 20px 0;
+  padding-top: 10px;
 }
 
 .theme-card {
@@ -627,6 +652,10 @@ a {
   color: currentColor;
   margin: 0;
   padding: 0;
+}
+
+footer a:hover {
+  color: var(--main-color-1);
 }
 
 .page-title {
@@ -736,4 +765,109 @@ a {
   .word-card {
     flex-direction: column;
   }
+}
+
+.select {
+}
+
+.select-display {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border-radius: 39px;
+  height: 39px;
+  width: var(--size);
+  border: 1px solid var(--main-color-1);
+  cursor: pointer;
+  font-size: 20px;
+  padding-left: 16px;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  transition: background-color 0.2s ease;
+  position: relative;
+}
+
+.select-display:hover {
+  background-color: var(--main-color-2);
+}
+
+.select-options {
+  opacity: 0;
+  transform: scaleY(0.9);
+  transform-origin: top left;
+  pointer-events: none;
+  display: block;
+  position: fixed;
+  background-color: var(--background-color);
+  top: 100%;
+  left: 0;
+  z-index: 9999;
+  border-radius: 20px;
+  overflow: hidden;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  max-height: 500px;
+  overflow-y: auto;
+  border: 1px solid var(--main-color-2);
+  box-shadow: none;
+}
+
+.select-display.focus + .select-options {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  opacity: 1;
+  transform: scaleY(1);
+  pointer-events: auto;
+}
+
+.select-display svg {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 10px;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+.select-display.focus svg {
+  transform: rotate(180deg);
+}
+
+.option {
+  width: calc(var(--size) - 16px);
+  padding: 10px 16px;
+  font-size: 20px;
+  background-color: var(--header-color);
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.option + .option {
+  border-top: 1px solid var(--main-color-2);
+}
+
+.option:hover {
+  background-color: var(--main-color-2);
+}
+
+.triangle {
+  width: 10px;
+  height: 10px;
+}
+
+.cards-icon {
+  vertical-align: -0.35rem;
+}
+
+footer {
+  background-color: var(--header-color);
+  padding: 20px;
+  text-align: center;
+  width: calc(100% - 40px);
+  border-top: 1px solid var(--main-color-2);
+}
+
+main {
+  flex: 1;
 }
